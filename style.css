@@ -1,6 +1,23 @@
 #getBook {
   display: flex;
   flex-direction: column;
-  margin: 0px 20px;
-  
+  margin: 0px 20px;  
+}
+#bookshelf {
+  margin: 20px;
+  text-align: center;
+}
+#shelves {
+  display: grid;
+  margin: 20px;
+  row-gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+#render {
+  margin: 20px;
+}
+#shelf {
+  display: inline-block;
+  text-align: center;
 }

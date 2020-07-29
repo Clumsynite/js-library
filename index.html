@@ -14,6 +14,19 @@
       <input type="checkbox" id='book-read'>
       <input type="button" value="Add Book" onclick="addBookToLibrary()">
     </div>
+    <div id='bookshelf'>
+      <button id='render-btn' onclick='render()'>Render</button>
+      <div id='shelves'>
+        <table id='shelf'>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read?</th>
+          </tr>
+        </table>
+      </div>
+    </div>
   <script src="script.js"></script>
 </body>
 </html>
