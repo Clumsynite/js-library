@@ -1,37 +1,24 @@
-#getBook {
-  display: flex;
-  flex-direction: column;
-  margin: 0px 20px;  
+body {
+  background-color: black;
+  color: wheat;
 }
-#temp-bookshelf {
-  margin: 20px;
-  text-align: center;
+button {
+  cursor: pointer;
+  opacity: 0.8;
 }
-#temp-shelves {
-  display: grid;
-  margin: 20px;
-  row-gap: 30px;
-  justify-items: center;
-  align-items: center;
+button:hover {
+  opacity: 1;
 }
-#temp-shelf {
-  display: inline-block;
-  text-align: center;
-}
-#render {
-  margin: 20px;
-}
-
 #bookshelf {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 15px;
   row-gap: 10px;
-  margin-bottom: 40px;
+  margin: 40px auto;
 }
 .book-card {
   width: 200px;
-  box-shadow: 0 4px 8px 0 grey;
+  box-shadow: 0 4px 8px 0 cyan;
   text-align: center;
   padding: 10px;
   line-height: 35px;
@@ -42,24 +29,70 @@
   font-weight: bold;
   font-size: 30px;
   border-bottom: 2px solid gray;
+  color: cyan;
 }
 .book-author{
   margin: 12px 0;
   font-style: italic;
   font-size: large;
   line-height: 20px;
+  color: #00ff40;
 }
 .book-pages{
-
+  color: #00ffc0;
 }
 .book-read{
-
+  color: #00ff80;
 }
-
+#add-book-div {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+#get-book {
+  max-width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+}
+/* #get-book input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+} */
+input[type=text]:focus {
+  outline: none;
+  background-color: #ddd;
+}
+#popup-btn{
+  display: block;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 32px;
+  height: 35px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  background-color: cyan;
+}
+#add-book-btn {
+  background-color: #00ff80;
+  color: black;
+  border: none;
+  padding: 16px 20px;
+}
 @media screen and (max-width: 720px){
   #bookshelf {
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5px;
+    column-gap: 20px;
   }
 }
 

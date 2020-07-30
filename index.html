@@ -7,17 +7,20 @@
   <title>Library</title>
 </head>
 <body>
-    <div id='getBook'>
-      <input type="text" id='book-title'>
-      <input type="text" id='book-author'>
-      <input type="text" id='book-pages'>
-      <input type="checkbox" id='book-read'>
-      <input type="button" value="Add Book" onclick="addBookToLibrary()">
+  <div id='parent'>
+    <div id='bookshelf'></div>
+    <div id='add-book-div'>
+      <div class='add-book-popup' id='get-book'>
+        <input type="text" id='book-title'>
+        <input type="text" id='book-author'>
+        <input type="text" id='book-pages'>
+        <input type="checkbox" id='book-read'>
+        <input type="button" value="Add Book" onclick="addBookToLibrary()" id = 'add-book-btn'>
+        <input type="button" value="Minimise" onclick="minimise()" id = 'close-popup'>
+      </div>
     </div>
-
-    <div id='bookshelf'>
-      
-    </div>
+    <button id='popup-btn' title='Add Book' onclick="popup()">+</button>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

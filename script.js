@@ -1,8 +1,9 @@
-const bookTitle = document.getElementById('book-title');
-const bookAuthor = document.getElementById('book-author');
-const bookPages = document.getElementById('book-pages');
-const bookRead = document.getElementById('book-read');
+const bookTitle = document.getElementById('book-title')
+const bookAuthor = document.getElementById('book-author')
+const bookPages = document.getElementById('book-pages')
+const bookRead = document.getElementById('book-read')
 const shelf = document.getElementById('bookshelf')
+const addBtn = document.getElementById('add-btn')
 let myLibrary = [];
 
 function Book(title, author, pages, read){
@@ -77,3 +78,10 @@ const renderCards = () => {
   })
 }
 render();
+
+const popup = () => {
+  document.getElementById("add-book-div").style.display = "block";
+}
+const minimise = () => {
+  document.getElementById("add-book-div").style.display = "none";
+}
