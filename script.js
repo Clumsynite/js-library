@@ -81,7 +81,9 @@ render();
 
 const popup = () => {
   document.getElementById("add-book-div").style.display = "block";
+  document.getElementById("popup-btn").style.display = "none";
 }
 const minimise = () => {
   document.getElementById("add-book-div").style.display = "none";
+  document.getElementById("popup-btn").style.display = "block";
 }
