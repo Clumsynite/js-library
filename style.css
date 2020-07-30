@@ -64,6 +64,12 @@ button:hover {
   align-content: space-between;
   line-height: 30px;
 }
+#btn-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
 input[type=text] {
   padding: 6px;
   font-size: 20px;
