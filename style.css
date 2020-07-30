@@ -24,6 +24,7 @@ button:hover {
   line-height: 35px;
   word-break: break-all;
   height: fit-content;
+  border-radius: 7%;
 }
 .book-title{
   font-weight: bold;
@@ -59,13 +60,6 @@ button:hover {
   flex-flow: column wrap;
   align-content: space-between;
 }
-/* #get-book input[type=text]{
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-} */
 input[type=text]:focus {
   outline: none;
   background-color: #ddd;
@@ -89,13 +83,17 @@ input[type=text]:focus {
   border: none;
   padding: 16px 20px;
 }
+
 @media screen and (max-width: 720px){
   #bookshelf {
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+  .book-card {
+    width: 180px;
   }
 }
-
 @media screen and (max-width: 400px){
   #bookshelf {
     grid-template-columns: 1fr 1fr;
