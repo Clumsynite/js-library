@@ -14,10 +14,10 @@
       <input type="checkbox" id='book-read'>
       <input type="button" value="Add Book" onclick="addBookToLibrary()">
     </div>
-    <div id='bookshelf'>
+    <div id='temp-bookshelf'>
       <button id='render-btn' onclick='render()'>Render</button>
-      <div id='shelves'>
-        <table id='shelf'>
+      <div id='temp-shelves'>
+        <table id='temp-shelf'>
           <tr>
             <th>Title</th>
             <th>Author</th>
@@ -25,6 +25,64 @@
             <th>Read?</th>
           </tr>
         </table>
+      </div>
+    </div>
+    <div id='bookshelf'>
+      <div class='book-card'>
+        <div class='book-title'>
+          Book 1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class='book-author'>
+          Written by aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class='book-pages'>
+          67 Pages
+        </div>
+        <div class='book-read'>
+          Haven't read yet
+        </div>
+      </div>
+      <div class='book-card'>
+        <div class='book-title'>
+          Book 1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class='book-author'>
+          Written by aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class='book-pages'>
+          67 Pages
+        </div>
+        <div class='book-read'>
+          Haven't read yet
+        </div>
+      </div>
+      <div class='book-card'>
+        <div class='book-title'>
+          Book 3
+        </div>
+        <div class='book-author'>
+          Written by Me Third Time
+        </div>
+        <div class='book-pages'>
+          67 Pages
+        </div>
+        <div class='book-read'>
+          Read
+        </div>
+      </div>
+      <div class='book-card'>
+        <div class='book-title'>
+          Book 1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class='book-author'>
+          Written by aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class='book-pages'>
+          67 Pages
+        </div>
+        <div class='book-read'>
+          Haven't read yet
+        </div>
       </div>
     </div>
   <script src="script.js"></script>

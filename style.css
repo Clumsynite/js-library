@@ -3,21 +3,55 @@
   flex-direction: column;
   margin: 0px 20px;  
 }
-#bookshelf {
+#temp-bookshelf {
   margin: 20px;
   text-align: center;
 }
-#shelves {
+#temp-shelves {
   display: grid;
   margin: 20px;
   row-gap: 30px;
   justify-items: center;
   align-items: center;
 }
+#temp-shelf {
+  display: inline-block;
+  text-align: center;
+}
 #render {
   margin: 20px;
 }
-#shelf {
-  display: inline-block;
+
+#bookshelf {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 10px;
+  margin-bottom: 40px;
+}
+.book-card {
+  width: 200px;
+  box-shadow: 0 4px 8px 0 grey;
   text-align: center;
+  padding: 10px;
+  line-height: 35px;
+  word-break: break-all;
+  height: fit-content;
+}
+.book-title{
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: 2px solid gray;
+}
+.book-author{
+  margin: 12px 0;
+  font-style: italic;
+  font-size: large;
+  line-height: 20px;
+}
+.book-pages{
+
+}
+.book-read{
+
 }

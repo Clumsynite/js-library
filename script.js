@@ -2,7 +2,8 @@ const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const bookPages = document.getElementById('book-pages');
 const bookRead = document.getElementById('book-read');
-const table = document.getElementById('shelf')
+const table = document.getElementById('temp-shelf')
+const shelf = document.getElementById('bookshelf')
 let myLibrary = [];
 
 function Book(title, author, pages, read){
@@ -39,6 +40,19 @@ function addBookToLibrary() {
 function render() {
   clearTable()
   console.clear()
+  renderTable()
+  renderCards()
+}
+
+function clearTable() {
+  if(table.childNodes.length>2){
+    while(table.childNodes.length>2){
+      table.removeChild(table.lastChild);
+    }
+  }
+}
+
+const renderTable = () => {
   myLibrary.forEach((book, index) => {
     console.log(index + ' ' + book.info())
     const row = document.createElement('tr')
@@ -58,12 +72,30 @@ function render() {
   })
 }
 
-function clearTable() {
-  if(table.childNodes.length>2){
-    while(table.childNodes.length>2){
-        table.removeChild(table.lastChild);
-    }
-  }
-}
+const renderCards = () => {
+  myLibrary.forEach((book, index) => {
+    const newCard = document.createElement('div')
+    const cardTitle = document.createElement('div')
+    const cardAuthor = document.createElement('div')
+    const cardPages = document.createElement('div')
+    const cardRead = document.createElement('div')
+    
+    newCard.className = 'book-card'
+    cardTitle.className = 'book-title'
+    cardAuthor.className = 'book-author'
+    cardPages.className = 'book-pages'
+    cardRead.className = 'book-read'
 
+    cardTitle.textContent = book.title
+    cardAuthor.textContent = `Written by ${book.author}`
+    cardPages.textContent = `${book.pages} Pages`
+    cardRead.textContent = `${book.read ? 'Read': 'Haven\'t read yet'}`
+
+    newCard.appendChild(cardTitle)
+    newCard.appendChild(cardAuthor)
+    newCard.appendChild(cardPages)
+    newCard.appendChild(cardRead)
+    shelf.appendChild(newCard)
+  })
+}
 render();
