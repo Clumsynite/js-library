@@ -2,7 +2,6 @@ const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const bookPages = document.getElementById('book-pages');
 const bookRead = document.getElementById('book-read');
-const table = document.getElementById('temp-shelf')
 const shelf = document.getElementById('bookshelf')
 let myLibrary = [];
 
@@ -38,38 +37,17 @@ function addBookToLibrary() {
 }
 
 function render() {
-  clearTable()
+  clearShelf()
   console.clear()
-  renderTable()
   renderCards()
 }
 
-function clearTable() {
-  if(table.childNodes.length>2){
-    while(table.childNodes.length>2){
-      table.removeChild(table.lastChild);
+function clearShelf() {
+  if(shelf.hasChildNodes()){
+    while(shelf.hasChildNodes()){
+      shelf.removeChild(shelf.lastChild);
     }
   }
-}
-
-const renderTable = () => {
-  myLibrary.forEach((book, index) => {
-    console.log(index + ' ' + book.info())
-    const row = document.createElement('tr')
-    const cellTitle = document.createElement('td')
-    cellTitle.textContent = book.title
-    row.appendChild(cellTitle)
-    const cellAuthor = document.createElement('td')
-    cellAuthor.textContent = book.author
-    row.appendChild(cellAuthor)
-    const cellPages = document.createElement('td')
-    cellPages.textContent = book.pages
-    row.appendChild(cellPages)
-    const cellRead = document.createElement('td')
-    cellRead.textContent = book.read
-    row.appendChild(cellRead)
-    table.appendChild(row)
-  })
 }
 
 const renderCards = () => {

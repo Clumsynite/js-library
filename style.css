@@ -55,3 +55,23 @@
 .book-read{
 
 }
+
+@media screen and (max-width: 720px){
+  #bookshelf {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  #bookshelf {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1px;
+  }
+  .book-card{
+    width: 150px;
+  }
+  .book-title {
+    font-size: 20px;
+  }
+}
