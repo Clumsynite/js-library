@@ -44,7 +44,6 @@ function addBookToLibrary() {
 
 function render() {
   clearShelf()
-  console.clear()
   renderCards()
 }
 
@@ -54,6 +53,12 @@ function clearShelf() {
       shelf.removeChild(shelf.lastChild);
     }
   }
+}
+
+const deleteCard = elem => {
+  const id = elem.path[2].getAttribute('data-number')
+  myLibrary.splice(id, 1)
+  render()
 }
 
 const renderCards = () => {
@@ -81,12 +86,13 @@ const renderCards = () => {
     cardRead.textContent = `${book.read ? 'Read': 'Haven\'t read yet'}`
     cardDelete.textContent = 'X'
     cardDelete.title = 'Delete Book'
-
+    cardDelete.addEventListener('click', deleteCard)
+    
     newCard.appendChild(cardTitle)
     newCard.appendChild(cardAuthor)
     newCard.appendChild(cardPages)
     newCard.appendChild(cardRead)
-    // divRemove.appendChild(cardDelete)
+    divRemove.appendChild(cardDelete)
     newCard.appendChild(divRemove)
     shelf.appendChild(newCard)
   })
@@ -101,3 +107,17 @@ const minimise = () => {
   document.getElementById("add-book-div").style.display = "none";
   document.getElementById("popup-btn").style.display = "block";
 }
+
+// let deleteButton = document.querySelectorAll('.remove')
+// let delButtons = Array.from(deleteButton)
+
+// delButtons.forEach(btn => {
+//   btn.addEventListener('click', elem => {
+//     const id = elem.path[2].getAttribute('data-number')
+//     console.log(id)
+//     if(id == 0){myLibrary.shift()}
+//     if(id == myLibrary.length){myLibrary.pop()}
+//     deleteButton = document.querySelectorAll('.remove')
+//     render()
+//   })
+// })
