@@ -5,7 +5,6 @@ body {
 button {
   cursor: pointer;
   opacity: 0.7;
-  outline: none;
 }
 button:hover {
   opacity: 1;
@@ -24,7 +23,7 @@ button:hover {
   text-align: center;
   padding: 10px;
   line-height: 35px;
-  word-break: break-all;
+  overflow-wrap: break-word;
   height: fit-content;
   border-radius: 7%;
 }
@@ -67,7 +66,7 @@ button:hover {
 .toggle {
   background-color: black;
   border: none;
-  color: ;
+  color: #0040ff;
   font-size: 16px;
 }
 #popup-btn{

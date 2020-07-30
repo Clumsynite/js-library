@@ -62,7 +62,7 @@ const deleteCard = elem => {
   render()
 }
 const readToggle = elem => {
-  const id = elem.path[2].getAttribute('data-number')
+  const id = elem.path[1].getAttribute('data-number')
   myLibrary[id].read = myLibrary[id].read ? false : true
   render(); 
 }
