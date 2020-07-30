@@ -62,7 +62,9 @@ const deleteCard = elem => {
   render()
 }
 const readToggle = elem => {
-
+  const id = elem.path[2].getAttribute('data-number')
+  myLibrary[id].read = myLibrary[id].read ? false : true
+  render(); 
 }
 
 const renderCards = () => {
@@ -74,6 +76,7 @@ const renderCards = () => {
     const cardRead = document.createElement('div')
     const cardDelete = document.createElement('button')
     const divRemove = document.createElement('div')
+    const toggle = document.createElement('button')
 
     newCard.className = 'book-card'
     newCard.setAttribute('data-number', index)
@@ -82,22 +85,27 @@ const renderCards = () => {
     cardPages.className = 'book-pages'
     cardRead.className = 'book-read'
     cardDelete.className = 'remove'
-    divRemove.className = 'div-remove'
+    toggle.className = 'toggle'
+    divRemove.className = 'remove-buttons'
     
     cardTitle.textContent = book.title
     cardAuthor.textContent = `Written by ${book.author}`
     cardPages.textContent = `${book.pages} Pages`
-    cardRead.textContent = `${book.read ? 'Read': 'Haven\'t read yet'}`
+    cardRead.textContent = `${book.read ? 'Completed': 'Haven\'t read yet'}`
     cardDelete.textContent = 'X'
     cardDelete.title = 'Delete Book'
     cardDelete.addEventListener('click', deleteCard)
+    toggle.textContent = book.read ? 'Mark Unread' : 'Mark Read'
+    toggle.title = 'Change Read Status'
+    toggle.addEventListener('click', readToggle)
     
+    divRemove.appendChild(cardDelete)
+    newCard.appendChild(divRemove)
     newCard.appendChild(cardTitle)
     newCard.appendChild(cardAuthor)
     newCard.appendChild(cardPages)
     newCard.appendChild(cardRead)
-    divRemove.appendChild(cardDelete)
-    newCard.appendChild(divRemove)
+    newCard.appendChild(toggle)
     shelf.appendChild(newCard)
   })
 }
