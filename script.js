@@ -57,8 +57,12 @@ function clearShelf() {
 
 const deleteCard = elem => {
   const id = elem.path[2].getAttribute('data-number')
-  myLibrary.splice(id, 1)
+  const agree = confirm('Are you sure you want to delete this book\nThis process can\'t be reversed')
+  agree? myLibrary.splice(id, 1) : false
   render()
+}
+const readToggle = elem => {
+
 }
 
 const renderCards = () => {
