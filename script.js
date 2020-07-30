@@ -26,6 +26,12 @@ function addBookToLibrary() {
   const author = bookAuthor.value
   const pages = bookPages.value
   const read = bookRead.checked
+
+  if(title == '' || author == '' || pages == ''){
+    alert("You can't just add nothing in your shelf")
+    return false
+  }
+
   const book = new Book(title, author, pages, read)
   myLibrary.push(book)
   console.log(myLibrary)
@@ -57,22 +63,31 @@ const renderCards = () => {
     const cardAuthor = document.createElement('div')
     const cardPages = document.createElement('div')
     const cardRead = document.createElement('div')
-    
+    const cardDelete = document.createElement('button')
+    const divRemove = document.createElement('div')
+
     newCard.className = 'book-card'
+    newCard.setAttribute('data-number', index)
     cardTitle.className = 'book-title'
     cardAuthor.className = 'book-author'
     cardPages.className = 'book-pages'
     cardRead.className = 'book-read'
-
+    cardDelete.className = 'remove'
+    divRemove.className = 'div-remove'
+    
     cardTitle.textContent = book.title
     cardAuthor.textContent = `Written by ${book.author}`
     cardPages.textContent = `${book.pages} Pages`
     cardRead.textContent = `${book.read ? 'Read': 'Haven\'t read yet'}`
+    cardDelete.textContent = 'X'
+    cardDelete.title = 'Delete Book'
 
     newCard.appendChild(cardTitle)
     newCard.appendChild(cardAuthor)
     newCard.appendChild(cardPages)
     newCard.appendChild(cardRead)
+    // divRemove.appendChild(cardDelete)
+    newCard.appendChild(divRemove)
     shelf.appendChild(newCard)
   })
 }

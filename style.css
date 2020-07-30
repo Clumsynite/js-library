@@ -28,24 +28,30 @@ button:hover {
   height: fit-content;
   border-radius: 7%;
 }
-.book-title{
+.book-title {
   font-weight: bold;
   font-size: 30px;
   border-bottom: 2px solid gray;
   color: cyan;
 }
-.book-author{
+.book-author {
   margin: 12px 0;
   font-style: italic;
   font-size: large;
   line-height: 20px;
   color: #00ff40;
 }
-.book-pages{
+.book-pages {
   color: #00ffc0;
 }
-.book-read{
+.book-read {
   color: #00ff80;
+}
+.remove {
+  background-color: rgb(241, 239, 239);
+  border: none;
+  font-weight: bold;
+  
 }
 #popup-btn{
   display: block;
@@ -60,7 +66,6 @@ button:hover {
   border: none;
   background-color: cyan;
 }
-
 #add-book-div {
   background-color: black;
   display: none;
@@ -85,14 +90,14 @@ button:hover {
   width: 100%;
   justify-content: space-between;
 }
-input[type=text] {
+input[type=text], input[type=number] {
   padding: 6px;
   font-size: 20px;
   border-radius: 8px;
   margin: 2px;
   border: 1px solid gray;
 }
-input[type=text]:focus {
+input[type=text]:focus, input[type=number]:focus {
   outline: none;
   background-color: #ddd;
 }
@@ -144,13 +149,14 @@ label {
     height: 60px;
     font-size: 50px;
   }
-  #add-book-div {
-
-  }
-  input[type=text] {
-
+  input[type=text], input[type=number] {
+    font-size: 18px;
   }
   label {
-
+    font-size: 18px;
+  }
+  input[type=checkbox] {
+    width: 15px;
+    height: 15px;
   }
 }
