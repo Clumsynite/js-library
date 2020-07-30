@@ -122,12 +122,28 @@ label {
 @media screen and (max-width: 400px){
   #bookshelf {
     grid-template-columns: 1fr 1fr;
-    column-gap: 1px;
+    margin: 0;
   }
   .book-card{
-    width: 150px;
+    width: 140px;
   }
   .book-title {
     font-size: 20px;
+  }
+  #popup-btn {
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    font-size: 50px;
+  }
+  #add-book-div {
+
+  }
+  input[type=text] {
+
+  }
+  label {
+
   }
 }
