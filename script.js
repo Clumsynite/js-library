@@ -26,7 +26,6 @@ function addBookToLibrary() {
   const author = bookAuthor.value
   const pages = bookPages.value
   const read = bookRead.checked
-  console.log(read)
   const book = new Book(title, author, pages, read)
   myLibrary.push(book)
   console.log(myLibrary)
