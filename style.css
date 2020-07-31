@@ -54,13 +54,13 @@ button:hover {
   font-style: italic;
   font-size: large;
   line-height: 20px;
-  color: #00ff40;
-}
-.book-pages {
   color: #00ffc0;
 }
-.book-read {
+.book-pages {
   color: #00ff80;
+}
+.book-read {
+  color: #00ff40;
 }
 .remove-buttons {
   display: flex;
