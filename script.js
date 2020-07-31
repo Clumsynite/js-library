@@ -4,7 +4,14 @@ const bookPages = document.getElementById('book-pages')
 const bookRead = document.getElementById('book-read')
 const shelf = document.getElementById('bookshelf')
 const addBtn = document.getElementById('add-btn')
+
 let myLibrary = [];
+// localStorage.setItem("books", JSON.stringify(names));
+if(localStorage.getItem('books') == null){
+  localStorage.setItem('books', JSON.stringify(myLibrary))
+}else {
+  myLibrary = JSON.parse(localStorage.getItem("books"))
+}
 
 function Book(title, author, pages, read){
   this.title = title
@@ -16,10 +23,10 @@ function Book(title, author, pages, read){
   }
 }
 const book1 = new Book('book1', 'me', 69, true)
-myLibrary.push(book1)
+// myLibrary.push(book1)
 
 const book2 = new Book('book2', 'you', 420, false)
-myLibrary.push(book2)
+// myLibrary.push(book2)
 
 function addBookToLibrary() {
   const title = bookTitle.value;
@@ -34,7 +41,7 @@ function addBookToLibrary() {
 
   const book = new Book(title, author, pages, read)
   myLibrary.push(book)
-  console.log(myLibrary)
+  localStorage.setItem('books', JSON.stringify(myLibrary))
   bookTitle.value = ''
   bookAuthor.value = ''
   bookPages.value = ''
@@ -59,11 +66,13 @@ const deleteCard = elem => {
   const id = elem.path[2].getAttribute('data-number')
   const agree = confirm('Are you sure you want to delete this book\nThis process can\'t be reversed')
   agree? myLibrary.splice(id, 1) : false
+  localStorage.setItem('books', JSON.stringify(myLibrary))
   render()
 }
 const readToggle = elem => {
   const id = elem.path[1].getAttribute('data-number')
   myLibrary[id].read = myLibrary[id].read ? false : true
+  localStorage.setItem('books', JSON.stringify(myLibrary))
   render(); 
 }
 
