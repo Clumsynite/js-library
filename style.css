@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 body {
   background-color: black;
-  color: wheat;
+  color: white;font-family: 'Quicksand', sans-serif;
+
 }
 button {
   cursor: pointer;
@@ -19,13 +22,20 @@ button:hover {
 }
 .book-card {
   width: 200px;
-  box-shadow: 0 4px 8px 0 cyan;
   text-align: center;
+  box-shadow: 0 4px 8px 0 cyan;
   padding: 10px;
   line-height: 35px;
   overflow-wrap: break-word;
   height: fit-content;
   border-radius: 7%;
+}
+.book-card:hover {
+  box-shadow: 0 4px 8px 0 lime;
+  margin: 10px 0;
+}
+.book-card:hover > .book-title {
+  border-bottom: 2px solid white;
 }
 .book-title {
   font-weight: bold;
@@ -66,10 +76,10 @@ button:hover {
 .toggle {
   background-color: black;
   border: none;
-  color: #ff4000;
+  color: white;
   font-size: 16px;
 }
-#popup-btn{
+#popup-btn {
   display: block;
   position: fixed;
   bottom: 15px;
