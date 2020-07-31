@@ -13,6 +13,12 @@ button:hover {
   opacity: 1;
   font-weight: bold;
 }
+#empty {
+  display: none;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+}
 #bookshelf {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

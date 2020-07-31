@@ -4,6 +4,7 @@ const bookPages = document.getElementById('book-pages')
 const bookRead = document.getElementById('book-read')
 const shelf = document.getElementById('bookshelf')
 const addBtn = document.getElementById('add-btn')
+const empty = document.getElementById('empty')
 
 let myLibrary = [];
 // localStorage.setItem("books", JSON.stringify(names));
@@ -12,6 +13,11 @@ if(localStorage.getItem('books') == null){
 }else {
   myLibrary = JSON.parse(localStorage.getItem("books"))
 }
+
+setInterval(() => {
+  if(localStorage.getItem('books') == '[]'){empty.style.display = 'block'}
+  else{empty.style.display = 'none'}
+}, 100)
 
 function Book(title, author, pages, read){
   this.title = title

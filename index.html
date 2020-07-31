@@ -7,24 +7,23 @@
   <title>Library</title>
 </head>
 <body>
-  <div id='parent'>
-    <div id='bookshelf'></div>
-    <div id='add-book-div'>
-      <div class='add-book-popup' id='get-book'>
-        <input type="text" id='book-title' placeholder="Book's title">
-        <input type="text" id='book-author' placeholder="Book's Author">
-        <input type="number" id='book-pages' placeholder="Number of Pages">
-        <div class="read-div">
-          <label><input type="checkbox" id='book-read' value=""> Read this book?</label>
-        </div>
-        <div id='btn-group'>
-          <button id='add-book-btn' onclick="addBookToLibrary()">Add Book</button>
-          <button id='minimise' onclick="minimise()">Minimise</button>
-        </div>
+  <div id='empty'> Oh no! Looks like you are not into reading books</div>
+  <div id='bookshelf'></div>
+  <div id='add-book-div'>
+    <div class='add-book-popup' id='get-book'>
+      <input type="text" id='book-title' placeholder="Book's title">
+      <input type="text" id='book-author' placeholder="Book's Author">
+      <input type="number" id='book-pages' placeholder="Number of Pages">
+      <div class="read-div">
+        <label><input type="checkbox" id='book-read' value=""> Read this book?</label>
+      </div>
+      <div id='btn-group'>
+        <button id='add-book-btn' onclick="addBookToLibrary()">Add Book</button>
+        <button id='minimise' onclick="minimise()">Minimise</button>
       </div>
     </div>
-    <button id='popup-btn' title='Add Book' onclick="popup()">+</button>
   </div>
+  <button id='popup-btn' title='Add Book' onclick="popup()">+</button>
   <script src="script.js"></script>
 </body>
 </html>
