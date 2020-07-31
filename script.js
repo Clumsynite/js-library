@@ -83,7 +83,7 @@ const readToggle = elem => {
 }
 
 const renderCards = () => {
-  myLibrary.forEach((book, index) => {
+  JSON.parse(localStorage.getItem("books")).forEach((book, index) => {
     const newCard = document.createElement('div')
     const cardTitle = document.createElement('div')
     const cardAuthor = document.createElement('div')
