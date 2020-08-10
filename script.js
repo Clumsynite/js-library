@@ -19,12 +19,14 @@ setInterval(() => {
   else{empty.style.display = 'none'}
 }, 100)
 
-function Book(title, author, pages, read){
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.info = () => {
+class Book {
+  constructor(title, author, pages, read){
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+  }
+  info = () => {
     return `${title} by ${author}, ${pages} Pages, ${read? 'read': 'not read yet'}`
   }
 }
