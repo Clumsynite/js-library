@@ -31,10 +31,8 @@ class Book {
   }
 }
 const book1 = new Book('book1', 'me', 69, true)
-// myLibrary.push(book1)
 
 const book2 = new Book('book2', 'you', 420, false)
-// myLibrary.push(book2)
 
 function addBookToLibrary() {
   const title = bookTitle.value;
@@ -136,17 +134,3 @@ const minimise = () => {
   document.getElementById("add-book-div").style.display = "none";
   document.getElementById("popup-btn").style.display = "block";
 }
-
-// let deleteButton = document.querySelectorAll('.remove')
-// let delButtons = Array.from(deleteButton)
-
-// delButtons.forEach(btn => {
-//   btn.addEventListener('click', elem => {
-//     const id = elem.path[2].getAttribute('data-number')
-//     console.log(id)
-//     if(id == 0){myLibrary.shift()}
-//     if(id == myLibrary.length){myLibrary.pop()}
-//     deleteButton = document.querySelectorAll('.remove')
-//     render()
-//   })
-// })
